@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2mvr7mltv2ki"]
+
+[ext_resource type="FontFile" uid="uid://l3sxykyju3xo" path="res://assets/fonts/SFPRODISPLAYMEDIUM.OTF" id="1_b04mb"]
+[ext_resource type="Script" path="res://scripts/ride_display.gd" id="2_he7gh"]
+[ext_resource type="FontFile" uid="uid://d17akaiwlesx0" path="res://assets/fonts/SFPRODISPLAYBOLD.OTF" id="3_3pp6o"]
+[ext_resource type="FontFile" uid="uid://chs2pmdcevlnb" path="res://assets/fonts/SFPRODISPLAYTHINITALIC.OTF" id="4_on4n2"]
+[ext_resource type="FontFile" uid="uid://bvtjdtpgp7vb5" path="res://assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF" id="5_x2b7n"]
+[ext_resource type="FontFile" uid="uid://dj6bvgfu32wqw" path="res://assets/fonts/SFPRODISPLAYHEAVYITALIC.OTF" id="6_yhxcj"]
+
+[sub_resource type="Theme" id="Theme_ou2sb"]
+default_font = ExtResource("1_b04mb")
+default_font_size = 20
+
+[node name="AssignRideDisplay" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme = SubResource("Theme_ou2sb")
+script = ExtResource("2_he7gh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="ID" type="Label" parent="MarginContainer/HBoxContainer/VBox/Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3pp6o")
+text = "Ride #69"
+
+[node name="STATUS" type="Label" parent="MarginContainer/HBoxContainer/VBox/Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_on4n2")
+text = "INCOMING"
+
+[node name="WaitTime" type="Label" parent="MarginContainer/HBoxContainer/VBox/Header"]
+layout_mode = 2
+text = "Wait Time: "
+
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.827451, 0, 1)
+theme_override_fonts/font = ExtResource("5_x2b7n")
+text = "MM:SS"
+
+[node name="CompInfo" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBox"]
+layout_mode = 2
+
+[node name="Size" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SIZE: "
+
+[node name="SizeNum" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_yhxcj")
+theme_override_font_sizes/font_size = 24
+text = "6"
+
+[node name="Bros" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+text = "Brothers: "
+
+[node name="BrosNum" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_x2b7n")
+text = "3"
+
+[node name="Pledges" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+text = "Pledges: "
+
+[node name="PledgesNum" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_x2b7n")
+text = "0"
+
+[node name="Girls" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+text = "Girls: "
+
+[node name="GirlsNum" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_x2b7n")
+text = "2"
+
+[node name="Other" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+text = "Other: "
+
+[node name="OtherNum" type="Label" parent="MarginContainer/HBoxContainer/VBox/CompInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_x2b7n")
+text = "1"
+
+[node name="Bottom" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBox"]
+layout_mode = 2
+
+[node name="AddressesButton" type="MenuButton" parent="MarginContainer/HBoxContainer/VBox/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Addresses"
+flat = false
+item_count = 2
+popup/item_0/text = "1907 Gardenspring Dr."
+popup/item_0/id = 0
+popup/item_1/text = "907 Lunch Pail Ln"
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBox/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "     -     "

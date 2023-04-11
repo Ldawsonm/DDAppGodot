@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bgtu61b3r4g1c"]
+
+[ext_resource type="FontFile" uid="uid://l3sxykyju3xo" path="res://assets/fonts/SFPRODISPLAYMEDIUM.OTF" id="1_jhk15"]
+
+[resource]
+default_font = ExtResource("1_jhk15")
+default_font_size = 20
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10

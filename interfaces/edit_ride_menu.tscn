@@ -1,0 +1,186 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwyq2selbtqd3"]
+
+[ext_resource type="Theme" uid="uid://bgtu61b3r4g1c" path="res://themes/main.tres" id="1_asjf6"]
+[ext_resource type="PackedScene" uid="uid://ds02jpqgqnmb0" path="res://interfaces/address_list_entry.tscn" id="2_mj3xf"]
+[ext_resource type="Script" path="res://scripts/edit_ride_menu.gd" id="2_rp4gm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu1ri"]
+bg_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="EditRideMenu" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.101563
+anchor_top = 0.114198
+anchor_right = 0.899306
+anchor_bottom = 0.862654
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_asjf6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hu1ri")
+script = ExtResource("2_rp4gm")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Edit Ride #69"
+horizontal_alignment = 1
+
+[node name="TimeInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CallTimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+text = "Call Time: "
+
+[node name="Hours" type="LineEdit" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+placeholder_text = "HH"
+alignment = 1
+max_length = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+text = ":"
+
+[node name="Mins" type="LineEdit" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+placeholder_text = "MM"
+alignment = 1
+max_length = 2
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "AM"
+popup/item_0/id = 0
+popup/item_1/text = "PM"
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+
+[node name="InOutOption" type="OptionButton" parent="MarginContainer/VBoxContainer/TimeInfo"]
+layout_mode = 2
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "Select"
+popup/item_0/id = 2
+popup/item_0/disabled = true
+popup/item_1/text = "Incoming"
+popup/item_1/id = 0
+popup/item_2/text = "Outgoing"
+popup/item_2/id = 1
+
+[node name="SizeInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SizeLabel" type="Label" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+text = "Size: "
+
+[node name="SizeLE" type="LineEdit" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+
+[node name="NumBrothersLabel" type="Label" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+text = "# of Brothers: "
+
+[node name="BrotherLE" type="LineEdit" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+
+[node name="NumPledgesLabel" type="Label" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+text = "# of Pledges: "
+
+[node name="PledgesLE" type="LineEdit" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+
+[node name="NumGirlsLabel" type="Label" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+text = "# of Girls: "
+
+[node name="GirlsLE" type="LineEdit" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+
+[node name="NumOtherLabel" type="Label" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+text = "# of Other: "
+
+[node name="OtherLE" type="LineEdit" parent="MarginContainer/VBoxContainer/SizeInfo"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "        Addresses        "
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AddressList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddressListEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry5" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry6" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="AddressListEntry7" parent="MarginContainer/VBoxContainer/ScrollContainer/AddressList" instance=ExtResource("2_mj3xf")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

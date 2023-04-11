@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2vekrc3sne1q"]
+
+[ext_resource type="Theme" uid="uid://bgtu61b3r4g1c" path="res://themes/main.tres" id="1_rawed"]
+[ext_resource type="Script" path="res://scripts/driver_display.gd" id="2_056e3"]
+[ext_resource type="FontFile" uid="uid://bvtjdtpgp7vb5" path="res://assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF" id="2_fovtr"]
+
+[node name="DriverDisplay" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme = ExtResource("1_rawed")
+script = ExtResource("2_056e3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Vbox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/Vbox"]
+layout_mode = 2
+
+[node name="Status" type="OptionButton" parent="MarginContainer/Vbox/Header"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Out"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "Due Back"
+popup/item_1/id = 1
+popup/item_2/text = "Available"
+popup/item_2/id = 2
+
+[node name="Spacer" type="MarginContainer" parent="MarginContainer/Vbox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AssignButton" type="Button" parent="MarginContainer/Vbox/Header"]
+layout_mode = 2
+text = "Assign Rides"
+
+[node name="Info" type="HBoxContainer" parent="MarginContainer/Vbox"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/Vbox/Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_fovtr")
+text = "Ed Seltzner"
+
+[node name="Cap" type="Label" parent="MarginContainer/Vbox/Info"]
+layout_mode = 2
+text = "Capacity: "
+
+[node name="CapNum" type="Label" parent="MarginContainer/Vbox/Info"]
+layout_mode = 2
+text = "7"
+
+[node name="MaxCap" type="Label" parent="MarginContainer/Vbox/Info"]
+layout_mode = 2
+text = "Max Capacity: "
+
+[node name="MaxCapNum" type="Label" parent="MarginContainer/Vbox/Info"]
+layout_mode = 2
+text = "10"
+
+[node name="Bottom" type="HBoxContainer" parent="MarginContainer/Vbox"]
+layout_mode = 2
+
+[node name="AssignedRides" type="MenuButton" parent="MarginContainer/Vbox/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Assigned Rides"
+flat = false
+item_count = 2
+popup/item_0/text = "Ride #69"
+popup/item_0/id = 0
+popup/item_1/text = "Ride #70"
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Vbox/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EditButton" type="Button" parent="MarginContainer/Vbox/Bottom"]
+layout_mode = 2
+text = " EDIT "
+
+[node name="RemoveButton" type="Button" parent="MarginContainer/Vbox/Bottom"]
+layout_mode = 2
+text = " DELETE "
+
+[connection signal="pressed" from="MarginContainer/Vbox/Header/AssignButton" to="." method="_on_assign_button_pressed"]
